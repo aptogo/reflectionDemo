@@ -64,11 +64,10 @@
 							</object>
 							<object class="IBUILabel" id="383190402">
 								<reference key="NSNextResponder" ref="472832366"/>
-								<int key="NSvFlags">292</int>
+								<int key="NSvFlags">266</int>
 								<string key="NSFrame">{{0, 242}, {200, 28}}</string>
 								<reference key="NSSuperview" ref="472832366"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:311</string>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
@@ -138,7 +137,7 @@
 					</object>
 					<object class="IBUIButton" id="575394575">
 						<reference key="NSNextResponder" ref="774585933"/>
-						<int key="NSvFlags">292</int>
+						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{166, 25}, {40, 40}}</string>
 						<reference key="NSSuperview" ref="774585933"/>
 						<reference key="NSWindow"/>
