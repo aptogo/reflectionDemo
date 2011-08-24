@@ -175,9 +175,10 @@ static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
     CGContextClipToMask(ctx, CGRectMake(0.0f, 0.0f, deviceReflectionSize.width, deviceReflectionSize.height), gradientImage);
     CGImageRelease(gradientImage);
     
-    // Translate origin to position reflection correctly. Reflection will be flipped because of differences between
+    // Translate origin to position reflection correctly. Reflection will be flipped automatically because of differences between
     // Quartz2D coordinate system and CALayer coordinate system.
 	CGContextTranslateCTM(ctx, 0.0, -self.bounds.size.height * displayScale + deviceReflectionSize.height);
+    CGContextScaleCTM(ctx, displayScale, displayScale);
 
     // Render into the reflection context. Rendering is wrapped in a transparency layer otherwise sublayers
     // will be rendered individually using the gradient mask and hidden layers will show through
@@ -190,7 +191,7 @@ static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
     UIImage *reflectionImage = [UIImage imageWithCGImage:reflectionCGImage];
 	CGContextRelease(ctx);
 	CGImageRelease(reflectionCGImage);
-    
+
 	return reflectionImage;
 }
 
