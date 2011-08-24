@@ -23,9 +23,6 @@ static const CGFloat kDefaultReflectionOffset   = 2.0f;
 static const CGFloat kDefaultReflectionHeight   = 60.0f;
 static const CGFloat kDefaultReflectionAlpha    = 0.5f;
 
-// Shared background queue for generation of reflections
-static dispatch_queue_t gReflectionQueue;
-
 // Helper function prototypes
 static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
 
@@ -39,19 +36,6 @@ static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
 @synthesize reflectionHeight = _reflectionHeight;
 @synthesize reflectionOffset = _reflectionOffset;
 @dynamic reflectionAlpha;
-
-// Create background queue used for creation of reflection - called by runtime before first use of ReflectionView
-+ (void)initialize
-{
-	static BOOL initialized = NO;
-    
-    // Check to prevent multiple initialization in case client calls this method directly
-	if (!initialized)
-	{
-		initialized = YES;
-		gReflectionQueue = dispatch_queue_create("uk.co.aptogo.reflection", NULL);
-    }
-}
 
 // MARK: Lifetime management
 
@@ -88,14 +72,7 @@ static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
 // Call to regenerate the reflection after the visual appearance of the main view (or its subviews) has changed
 - (void)updateReflection
 {
-    // Create reflection on background queue then update UI on main thread
-    dispatch_async(gReflectionQueue, ^{
-        UIImage *reflectedImage = [self reflectedImage];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            _reflection.image = reflectedImage;
-        });
-    });
+    _reflection.image = [self reflectedImage];
 }
 
 // MARK: Accessors
