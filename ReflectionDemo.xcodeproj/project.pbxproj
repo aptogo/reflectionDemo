@@ -18,6 +18,7 @@
 		001E2EC514056ED500C4FFEF /* ReflectionDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 001E2EC314056ED500C4FFEF /* ReflectionDemoViewController.xib */; };
 		001E2ECD14056F9D00C4FFEF /* ReflectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 001E2ECC14056F9D00C4FFEF /* ReflectionView.m */; };
 		001E2ED014056FFA00C4FFEF /* images in Resources */ = {isa = PBXBuildFile; fileRef = 001E2ECF14056FFA00C4FFEF /* images */; };
+		007F63451406C96A009EE427 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 007F63441406C96A009EE427 /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		001E2ECB14056F9D00C4FFEF /* ReflectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReflectionView.h; sourceTree = "<group>"; };
 		001E2ECC14056F9D00C4FFEF /* ReflectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReflectionView.m; sourceTree = "<group>"; };
 		001E2ECF14056FFA00C4FFEF /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
+		007F63441406C96A009EE427 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		001E2EB114056ED400C4FFEF /* ReflectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				007F63441406C96A009EE427 /* README.markdown */,
 				001E2ECF14056FFA00C4FFEF /* images */,
 				001E2ECE14056FA200C4FFEF /* ReflectionView */,
 				001E2EBA14056ED500C4FFEF /* ReflectionDemoAppDelegate.h */,
@@ -143,6 +146,7 @@
 		001E2E9E14056ED200C4FFEF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Aptogo Limited";
 			};
 			buildConfigurationList = 001E2EA114056ED200C4FFEF /* Build configuration list for PBXProject "ReflectionDemo" */;
@@ -171,6 +175,7 @@
 				001E2EBF14056ED500C4FFEF /* MainWindow.xib in Resources */,
 				001E2EC514056ED500C4FFEF /* ReflectionDemoViewController.xib in Resources */,
 				001E2ED014056FFA00C4FFEF /* images in Resources */,
+				007F63451406C96A009EE427 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
