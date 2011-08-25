@@ -121,9 +121,13 @@ static CGImageRef CreateGradientImage(int pixelsWide, int pixelsHigh);
 // Creates an autoreleased reflected image of the contents of the main view
 - (UIImage *)reflectedImage
 {   
-    // Calculate the size of the reflection in devices units - supports retina display
-    BOOL retinaDisplay = [[UIScreen mainScreen] respondsToSelector:@selector(scale)] && [[UIScreen mainScreen] scale] == 2;
-    CGFloat displayScale = (retinaDisplay)? 2.0f : 1.0f;
+    // Calculate the size of the reflection in devices units - supports hires displays
+    CGFloat displayScale = 1.0f;
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)])
+    {
+        displayScale = [[UIScreen mainScreen] scale];
+    }
+  
     CGSize deviceReflectionSize = _reflection.bounds.size;
     deviceReflectionSize.width *= displayScale;
     deviceReflectionSize.height *= displayScale;
